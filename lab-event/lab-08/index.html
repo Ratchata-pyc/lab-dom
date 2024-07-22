@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>Hide</button>
+    <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</span>
+  </body>
+  <script>
+    const button = document.querySelector("button");
+    const message = document.querySelector("span");
+    let booButton = true
+    button.addEventListener("click", function () {
+      if(booButton){
+        booButton = !booButton
+        button.innerText = 'Show'
+        message.setAttribute('hidden','hidden')
+      }else{
+        booButton = !booButton
+        button.innerText = 'Hide'
+        message.removeAttribute('hidden')
+      }
+    });
+  </script>
+</html>
+<!-- จงสร้าง Button มีข้อความว่า “Hide”
+เมื่อผู้ใช้ click button ให้ซ่อนข้อความและเปลี่ยนข้อความบน Button เป็น “Show” เมื่อ click button อีกครั้งให้แสดงข้อความและเปลี่ยนข้อความบน Button เป็น Hide -->

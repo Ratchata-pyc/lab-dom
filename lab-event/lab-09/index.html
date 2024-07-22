@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .red {
+        border-color: red;
+      }
+      .textred {
+        color: red;
+      }
+      .input {
+        display: flex;
+        flex-direction: column;
+      }
+      body {
+        display: flex;
+      }
+      button {
+        height: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="input">
+      <input type="text" />
+      <span class="textred"></span>
+    </div>
+    <button class="button">Check</button>
+  </body>
+  <script>
+    const input = document.querySelector("input");
+    const span = document.querySelector("span");
+    const button = document.querySelector("button");
+    button.addEventListener("click", function (event) {
+      if (input.value === "") {
+        input.classList.add("red");
+        span.innerText = "Phone Number is required";
+      } else if (isNaN(input.value)) {
+        input.classList.add("red");
+        span.innerText = "Phone Number is invalid";
+      } else if (input.value.length !== 10) {
+        input.classList.add("red");
+        span.innerText = "Invalid length";
+      } else {
+        alert("Your number is valid");
+      }
+    });
+  </script>
+</html>
+
+<!-- จงสร้าง Input และ Button ดังรูปเมื่อผู้ใช้กรอกเบอร์โทรและกด Check
+ถ้าผู้ใช้ไม่กรอกให้ขึ้นข้อความ Phone Number is required
+ถ้าผู้ใช้กรอกค่าที่ไม่ใช่ตัวเลขให้ขึ้นข้อความ Phone Number is invalid
+ถ้าผู้ใช้กรอกค่าที่มีความยาวไม่เท่ากับ 10 ให้ขึ้นข้อความ Invalid length
+ถ้ากรอกถูกต้องให้ Alert “Your number is valid”
+ -->

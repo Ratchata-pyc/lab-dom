@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="country">Select Province:</label>
+    <select id="province" onchange="populateDistricts()">
+      <option value="">Select Province</option>
+      <option value="Nakhon Pathom">Nakhon Pathom</option>
+      <option value="Loei">Loei</option>
+    </select>
+
+    <label for="district">Select District:</label>
+    <select id="district">
+      <option value="">Select District</option>
+    </select>
+  </body>
+  <script>
+    const districtData = {
+      "Nakhon Pathom": [
+        "เมืองนครปฐม",
+        "กำแพงแสน",
+        "นครชัยศรี",
+        "ดอนตูม",
+        "บางเลน",
+        "สามพราน",
+        "พุทธมณฑล",
+      ],
+      Loei: [
+        "เมืองเลย",
+        "นาด้วง",
+        "เชียงคาน",
+        "ปากชม",
+        "ด่านซ้าย",
+        "นาแห้ว",
+        "ภูเรือ",
+        "ท่าลี่",
+        "วังสะพุง",
+        "ภูกระดึง",
+        "ภูหลวง",
+        "ผาขาว",
+        "เอราวัณ",
+        "หนองหิน",
+      ],
+    };
+
+    function populateDistricts() {
+      const provinceSelect = document.getElementById("province");
+      const districtSelect = document.getElementById("district");
+      const selectedProvince = provinceSelect.value;
+
+      districtSelect.innerHTML = '<option value="">Select District</option>';
+
+      if (selectedProvince) {
+        const districts = districtData[selectedProvince];
+        districts.forEach((district) => {
+          const option = document.createElement("option");
+          option.text = district;
+          option.value = district;
+          districtSelect.add(option);
+        });
+      }
+    }
+  </script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .buttonRed {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn">Submit</button>
+  </body>
+  <script>
+    const button = document.querySelector(".btn");
+    setTimeout(() => {
+      button.className += " buttonRed";
+    }, 3000);
+    setTimeout(() => {
+      button.className = "btn";
+    }, 6000);
+  </script>
+  <!-- จงเขียนคำสั่งเพื่อเปลี่ยนสีพื้นหลังของ button ให้เป็นสีแดงเมื่อเวลาผ่านไป 3 วินาที หลังจากนั้นอีก 3 วินาทีให้เปลี่ยนสีพื้นหลังกลับมาเหมือนเดิม
+  ใช้วิธีเปลี่ยน property style ของ element object
+  ใช้วิธีเพิ่มลด class
+   -->
+</html>

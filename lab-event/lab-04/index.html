@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="https://google.com">Google</a>
+    <div hidden>
+      <span>Leave for https://google.com?</span>
+      <button id="goTogoogle">Ok</button>
+      <button id="canCel">Cancel</button>
+    </div>
+  </body>
+  <script>
+    const div = document.querySelector("div");
+    const googleLink = document.querySelector("a");
+    const goTogoog = document.getElementById("goTogoogle");
+    const cancel = document.getElementById("canCel");
+
+    // googleLink.addEventListener("click", function (event) {
+    //   event.preventDefault();
+    //   div.removeAttribute("hidden");
+    // });
+    // goTogoog.addEventListener("click", function (event) {
+    //   window.location.href = "https://google.com";
+    // });
+
+    googleLink.addEventListener("click", function (event) {
+      event.preventDefault();
+      const confirm1 = confirm("Leave for https://google.com?");
+      if (confirm1) {
+        window.location.href = "https://google.com";
+      }
+    });
+  </script>
+</html>
+
+<!-- จงสร้างลิงค์ <a> Tag มีข้อความว่า “Google”
+  เมื่อผู้ใช้ click link ให้ขึ้นคำถามว่า “Leave for https://google.com?”
+  ถ้าผู้ใช้กด OK ให้ redirect ไปที่ https://google.com
+  ถ้าผู้ใช้กด Cancel ให้ยกเลิก redirect ไปที่ https://google.com
+   -->
